@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다양한 예제가 있는 AlphaFold 시뮬레이션</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧬 AlphaFold 단백질 접힘 시뮬레이션</h1>
+        
+        <p style="text-align:center">
+            이 시뮬레이션은 단백질이 어떻게 접히는지, AlphaFold가 어떻게 그 구조를 예측하는지 보여줍니다.<br>
+            다양한 예제를 선택하고 AI가 구조를 찾아내는 과정을 확인해보세요!
+        </p>
+        
+        <div class="controls">
+            <button id="start-btn">AlphaFold 실행하기</button>
+            <button id="reset-btn">초기화</button>
+        </div>
+        
+        <div class="example-name" id="example-name">기본 단백질 구조</div>
+        <div class="game-area" id="protein-container"></div>
+        <div class="tooltip" id="tooltip"></div>
+        
+        <div class="score" id="score-display">점수: 0</div>
+        
+        <div class="button-group">
+            <div class="button-group-title">단백질 예제 선택</div>
+            <div class="controls">
+                <button id="example-basic">기본 구조</button>
+                <button id="example-helix">알파 헬릭스</button>
+                <button id="example-sheet">베타 시트</button>
+                <button id="example-globular">글로불러 단백질</button>
+                <button id="example-enzyme">효소 구조</button>
+                <button id="example-membrane">막 단백질</button>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e74c3c;"></div>
+                <span>소수성 (H)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #3498db;"></div>
+                <span>친수성 (P)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #9b59b6;"></div>
+                <span>특수 기능 (S)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #f1c40f;"></div>
+                <span>시스테인 (C)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2ecc71;"></div>
+                <span>글리신 (G)</span>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="info">단백질 정보</div>
+            <div class="tab" data-tab="alphafold">AlphaFold 설명</div>
+        </div>
+        
+        <div class="tab-content" id="info-tab">
+            <div class="info-box">
+                <h3>단백질 접힘의 원리</h3>
+                <ul>
+                    <li><strong style="color:#e74c3c">소수성(H)</strong> 아미노산은 물을 싫어해 단백질 내부로 숨으려 합니다.</li>
+                    <li><strong style="color:#3498db">친수성(P)</strong> 아미노산은 물을 좋아해 바깥쪽으로 나오려 합니다.</li>
+                    <li><strong style="color:#9b59b6">특수 기능(S)</strong> 아미노산은 효소 활성, 기질 결합 등 특별한 역할을 합니다.</li>
+                    <li><strong style="color:#f1c40f">시스테인(C)</strong>은 황 결합을 형성해 단백질 구조를 안정화합니다.</li>
+                    <li><strong style="color:#2ecc71">글리신(G)</strong>은 작고 유연해 단백질의 구부러짐에 중요합니다.</li>
+                </ul>
+                <p>단백질은 위와 같은 아미노산들의 특성에 따라 특정 3D 구조로 자발적으로 접힙니다.</p>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="alphafold-tab" style="display:none">
+            <div class="info-box">
+                <h3>AlphaFold의 작동 원리</h3>
+                <p>AlphaFold는 Google DeepMind가 개발한 AI 시스템으로 단백질 구조를 예측합니다.</p>
+                <ol>
+                    <li><strong>다중 서열 정렬(MSA)</strong>: 진화적으로 관련된 단백질 서열들을 비교합니다.</li>
+                    <li><strong>특성 추출</strong>: 아미노산 간의 관계와 물리화학적 특성을 분석합니다.</li>
+                    <li><strong>딥러닝 모델</strong>: 복잡한 신경망을 통해 아미노산 간의 3D 거리를 예측합니다.</li>
+                    <li><strong>구조 정제</strong>: 물리 기반 알고리즘으로 최종 구조를 최적화합니다.</li>
+                </ol>
+                <p>실제 AlphaFold는 50개 이상의 딥러닝 모델과 방대한 계산 자원을 사용해 높은 정확도를 달성합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
