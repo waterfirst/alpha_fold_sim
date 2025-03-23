@@ -12,7 +12,7 @@
 
 ## 데모
 
-![AlphaFold 시뮬레이션 데모](demo.mp4)
+![AlphaFold 시뮬레이션 데모](demo.gif)
 
 ## 설치 및 실행
 
