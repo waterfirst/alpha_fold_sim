@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>HP 접힘 시뮬레이터</title>
+<style>
+ body {font-family: Arial, sans-serif;}
+ canvas {border:1px solid #ccc; margin-top:10px;}
+ .controls {margin-top:10px;}
+ textarea {width:300px; height:80px;}
+</style>
+</head>
+<body>
+<h1>HP 접힘 시뮬레이터</h1>
+<div class="controls">
+ 서열: <input id="seq" value="HPPHPPHPHPPH" size="30"><br>
+ J<sub>HH</sub>: <input id="JHH" type="number" value="1" step="0.1" style="width:60px;">
+ J<sub>P,bury</sub>: <input id="JPB" type="number" value="1" step="0.1" style="width:60px;">
+ w<sub>pull</sub>: <input id="WP" type="number" value="2" step="0.1" style="width:60px;">
+ T: <input id="temp" type="number" value="1" step="0.1" style="width:60px;">
+<br>
+예측 접촉 (i j p 한 줄씩):<br>
+<textarea id="contacts">1 10 0.9\n3 8 0.5</textarea><br>
+<button id="start">시작</button>
+<button id="stop">정지</button>
+</div>
+<canvas id="canvas" width="500" height="500"></canvas>
+<div id="stats"></div>
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let seq, positions, contacts, running=false, timer;
+let JHH, JPB, WP, T;
+
+function init() {
+  seq = document.getElementById('seq').value.trim().toUpperCase();
+  positions = [];
+  for (let i=0;i<seq.length;i++) positions.push([i,0]);
+  contacts = parseContacts(document.getElementById('contacts').value);
+  JHH = parseFloat(document.getElementById('JHH').value);
+  JPB = parseFloat(document.getElementById('JPB').value);
+  WP = parseFloat(document.getElementById('WP').value);
+  T = parseFloat(document.getElementById('temp').value);
+  draw();
+  updateStats();
+}
+
+function parseContacts(text){
+  const lines = text.split(/\n/).map(l=>l.trim()).filter(l=>l);
+  return lines.map(l=>{
+    const parts = l.split(/[\s:,]+/);
+    return {i:parseInt(parts[0])-1,j:parseInt(parts[1])-1,p:parseFloat(parts[2])};
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  // find min/max for centering
+  let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+  for(const [x,y] of positions){
+    if(x<minX) minX=x; if(x>maxX) maxX=x;
+    if(y<minY) minY=y; if(y>maxY) maxY=y;
+  }
+  const scale = 20;
+  const offsetX = canvas.width/2 - ((minX+maxX)/2)*scale;
+  const offsetY = canvas.height/2 - ((minY+maxY)/2)*scale;
+  // draw bonds
+  ctx.strokeStyle = '#888';
+  ctx.lineWidth = 2;
+  for (let i=0;i<positions.length-1;i++){
+    const [x1,y1]=positions[i];
+    const [x2,y2]=positions[i+1];
+    ctx.beginPath();
+    ctx.moveTo(x1*scale+offsetX,y1*scale+offsetY);
+    ctx.lineTo(x2*scale+offsetX,y2*scale+offsetY);
+    ctx.stroke();
+  }
+  // draw residues
+  for (let i=0;i<positions.length;i++){
+    const [x,y]=positions[i];
+    ctx.beginPath();
+    ctx.arc(x*scale+offsetX,y*scale+offsetY,8,0,Math.PI*2);
+    ctx.fillStyle = seq[i]==='H'? '#e74c3c':'#3498db';
+    ctx.fill();
+    ctx.strokeStyle='#333';
+    ctx.stroke();
+  }
+}
+
+function mcStep(){
+  const n = seq.length;
+  const pivot = Math.floor(Math.random()*n);
+  const [px,py]=positions[pivot];
+  const rotations = [ [0,1,-1,0], [0,-1,1,0], [-1,0,0,-1] ];
+  const r = rotations[Math.floor(Math.random()*rotations.length)];
+  const newPos = positions.map(p=>p.slice());
+  for (let i=pivot+1;i<n;i++){
+    const dx = positions[i][0]-px;
+    const dy = positions[i][1]-py;
+    const nx = px + r[0]*dx + r[1]*dy;
+    const ny = py + r[2]*dx + r[3]*dy;
+    newPos[i]=[nx,ny];
+  }
+  // collision check
+  const set = new Set(newPos.map(p=>p.join(',')));
+  if(set.size<newPos.length) return; // reject move
+  const oldE = calcEnergy(positions).energy;
+  const newE = calcEnergy(newPos).energy;
+  const dE = newE - oldE;
+  if (dE<=0 || Math.random()<Math.exp(-dE/T)){
+    positions = newPos;
+  }
+}
+
+function calcEnergy(pos){
+  const n = seq.length;
+  let chh=0; // H-H contacts
+  const neighborCounts = new Array(n).fill(0);
+  for (let i=0;i<n;i++){
+    for (let j=i+1;j<n;j++){
+      const dx = Math.abs(pos[i][0]-pos[j][0]);
+      const dy = Math.abs(pos[i][1]-pos[j][1]);
+      if(dx+dy===1 && Math.abs(i-j)>1){
+        if(seq[i]==='H' && seq[j]==='H') chh++;
+        if(seq[i]==='P') neighborCounts[i]++;
+        if(seq[j]==='P') neighborCounts[j]++;
+      }
+    }
+  }
+  let pBury=0;
+  for(let i=0;i<n;i++) if(seq[i]==='P' && neighborCounts[i]>=3) pBury++;
+  // pulling contacts
+  let pull=0, pSum=0;
+  for(const c of contacts){
+    pSum += c.p;
+    const d = Math.abs(pos[c.i][0]-pos[c.j][0]) + Math.abs(pos[c.i][1]-pos[c.j][1]);
+    if(d===1){
+      pull += c.p;
+    }
+  }
+  const energy = -JHH*chh + JPB*pBury - WP*pull;
+  const agreement = pSum>0 ? pull/pSum : 0;
+  // radius of gyration
+  let cx=0, cy=0;
+  for(const [x,y] of pos){cx+=x; cy+=y;}
+  cx/=n; cy/=n;
+  let rg=0;
+  for(const [x,y] of pos){rg += (x-cx)**2 + (y-cy)**2;}
+  rg = Math.sqrt(rg/n);
+  return {energy, chh, pBury, agreement, rg};
+}
+
+function updateStats(){
+  const s = calcEnergy(positions);
+  const statsDiv = document.getElementById('stats');
+  statsDiv.innerHTML = `E=${s.energy.toFixed(2)} | H-H=${s.chh} | P bury=${s.pBury} | Agreement=${(s.agreement*100).toFixed(1)}% | Rg=${s.rg.toFixed(2)}`;
+}
+
+function loop(){
+  for(let i=0;i<10;i++) mcStep();
+  draw();
+  updateStats();
+}
+
+document.getElementById('start').onclick = ()=>{
+  if(running) return;
+  init();
+  running=true;
+  timer = setInterval(loop,50);
+};
+
+document.getElementById('stop').onclick = ()=>{
+  running=false;
+  clearInterval(timer);
+};
+
+init();
+</script>
+</body>
+</html>
