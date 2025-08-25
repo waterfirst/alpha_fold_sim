@@ -13,6 +13,10 @@ const exampleSheet = document.getElementById('example-sheet');
 const exampleGlobular = document.getElementById('example-globular');
 const exampleEnzyme = document.getElementById('example-enzyme');
 const exampleMembrane = document.getElementById('example-membrane');
+const exampleCoiled = document.getElementById('example-coiled');
+const exampleCollagen = document.getElementById('example-collagen');
+const exampleAntibody = document.getElementById('example-antibody');
+const examplePrion = document.getElementById('example-prion');
 
 // 탭 관련
 const tabs = document.querySelectorAll('.tab');
@@ -66,6 +70,22 @@ const proteinExamples = {
     membrane: {
         name: '막 단백질',
         pattern: 'HHHHPSPPHHHHSPPHHHHH'
+    },
+    coiled: {
+        name: '코일드 코일',
+        pattern: 'HHPPHHPPHHPPHHPP'
+    },
+    collagen: {
+        name: '콜라겐',
+        pattern: 'GPGPGPGPGPGP'
+    },
+    antibody: {
+        name: '항체',
+        pattern: 'HPCSHPCGPHCSPGH'
+    },
+    prion: {
+        name: '프리온 단백질',
+        pattern: 'HSHSHPCGPGHSHS'
     }
 };
 
@@ -1125,11 +1145,27 @@ function setupEventListeners() {
     exampleEnzyme.addEventListener('click', () => {
         initProtein('enzyme');
     });
-    
+
     exampleMembrane.addEventListener('click', () => {
         initProtein('membrane');
     });
-    
+
+    exampleCoiled.addEventListener('click', () => {
+        initProtein('coiled');
+    });
+
+    exampleCollagen.addEventListener('click', () => {
+        initProtein('collagen');
+    });
+
+    exampleAntibody.addEventListener('click', () => {
+        initProtein('antibody');
+    });
+
+    examplePrion.addEventListener('click', () => {
+        initProtein('prion');
+    });
+
     // 탭 전환
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
