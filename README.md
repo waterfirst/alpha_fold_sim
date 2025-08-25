@@ -43,7 +43,7 @@
 - `index.html` - 메인 HTML 파일
 - `styles.css` - 스타일시트
 - `script.js` - 시뮬레이션 로직과 인터랙션 코드
-- `hp_sim.html` - 2D HP 모델과 예측 접촉 기반의 간단한 접힘 시뮬레이터
+- `hp_sim.html` - React로 구현된 2D HP 모델과 예측 접촉 기반의 간단한 접힘 시뮬레이터
 
 ## 사용 방법
 
