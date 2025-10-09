@@ -3,98 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>다양한 예제가 있는 AlphaFold 시뮬레이션</title>
+    <title>한국 개봉작 선호도 TOP 100</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🧬 AlphaFold 단백질 접힘 시뮬레이션</h1>
-        
-        <p style="text-align:center">
-            이 시뮬레이션은 단백질이 어떻게 접히는지, AlphaFold가 어떻게 그 구조를 예측하는지 보여줍니다.<br>
-            다양한 예제를 선택하고 AI가 구조를 찾아내는 과정을 확인해보세요!
-        </p>
-        
-        <div class="controls">
-            <button id="start-btn">AlphaFold 실행하기</button>
-            <button id="reset-btn">초기화</button>
+    <header class="page-header">
+        <div class="header-content">
+            <h1>한국 개봉 영화 선호도 TOP 100</h1>
+            <p>
+                최근 1년 사이 한국에서 개봉한 국내·해외 작품들의 SNS 리뷰를 모아 선호도 점수를 산출했습니다.
+                장르와 국적에 따라 분리된 상위 100편의 랭킹을 한눈에 확인해보세요.
+            </p>
+            <div class="meta-info" id="meta-info"></div>
         </div>
-        
-        <div class="example-name" id="example-name">기본 단백질 구조</div>
-        <div class="game-area" id="protein-container"></div>
-        <div class="tooltip" id="tooltip"></div>
-        
-        <div class="score" id="score-display">점수: 0</div>
-        
-        <div class="button-group">
-            <div class="button-group-title">단백질 예제 선택</div>
-            <div class="controls">
-                <button id="example-basic">기본 구조</button>
-                <button id="example-helix">알파 헬릭스</button>
-                <button id="example-sheet">베타 시트</button>
-                <button id="example-globular">글로불러 단백질</button>
-                <button id="example-enzyme">효소 구조</button>
-                <button id="example-membrane">막 단백질</button>
-            </div>
-        </div>
-        
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #e74c3c;"></div>
-                <span>소수성 (H)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #3498db;"></div>
-                <span>친수성 (P)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #9b59b6;"></div>
-                <span>특수 기능 (S)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #f1c40f;"></div>
-                <span>시스테인 (C)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #2ecc71;"></div>
-                <span>글리신 (G)</span>
-            </div>
-        </div>
-        
-        <div class="tabs">
-            <div class="tab active" data-tab="info">단백질 정보</div>
-            <div class="tab" data-tab="alphafold">AlphaFold 설명</div>
-        </div>
-        
-        <div class="tab-content" id="info-tab">
-            <div class="info-box">
-                <h3>단백질 접힘의 원리</h3>
-                <ul>
-                    <li><strong style="color:#e74c3c">소수성(H)</strong> 아미노산은 물을 싫어해 단백질 내부로 숨으려 합니다.</li>
-                    <li><strong style="color:#3498db">친수성(P)</strong> 아미노산은 물을 좋아해 바깥쪽으로 나오려 합니다.</li>
-                    <li><strong style="color:#9b59b6">특수 기능(S)</strong> 아미노산은 효소 활성, 기질 결합 등 특별한 역할을 합니다.</li>
-                    <li><strong style="color:#f1c40f">시스테인(C)</strong>은 황 결합을 형성해 단백질 구조를 안정화합니다.</li>
-                    <li><strong style="color:#2ecc71">글리신(G)</strong>은 작고 유연해 단백질의 구부러짐에 중요합니다.</li>
-                </ul>
-                <p>단백질은 위와 같은 아미노산들의 특성에 따라 특정 3D 구조로 자발적으로 접힙니다.</p>
-            </div>
-        </div>
-        
-        <div class="tab-content" id="alphafold-tab" style="display:none">
-            <div class="info-box">
-                <h3>AlphaFold의 작동 원리</h3>
-                <p>AlphaFold는 Google DeepMind가 개발한 AI 시스템으로 단백질 구조를 예측합니다.</p>
-                <ol>
-                    <li><strong>다중 서열 정렬(MSA)</strong>: 진화적으로 관련된 단백질 서열들을 비교합니다.</li>
-                    <li><strong>특성 추출</strong>: 아미노산 간의 관계와 물리화학적 특성을 분석합니다.</li>
-                    <li><strong>딥러닝 모델</strong>: 복잡한 신경망을 통해 아미노산 간의 3D 거리를 예측합니다.</li>
-                    <li><strong>구조 정제</strong>: 물리 기반 알고리즘으로 최종 구조를 최적화합니다.</li>
-                </ol>
-                <p>실제 AlphaFold는 50개 이상의 딥러닝 모델과 방대한 계산 자원을 사용해 높은 정확도를 달성합니다.</p>
-            </div>
-        </div>
-    </div>
+    </header>
 
+    <main>
+        <section class="filters" aria-label="필터">
+            <h2>필터</h2>
+            <div class="filters-grid">
+                <label class="filter-item">
+                    <span>제목 검색</span>
+                    <input type="search" id="search-input" placeholder="영화 제목을 입력하세요" aria-label="영화 제목 검색">
+                </label>
+
+                <fieldset class="filter-item">
+                    <legend>국적 구분</legend>
+                    <label>
+                        <input type="radio" name="nationality" value="all" checked>
+                        전체
+                    </label>
+                    <label>
+                        <input type="radio" name="nationality" value="Domestic">
+                        국내
+                    </label>
+                    <label>
+                        <input type="radio" name="nationality" value="Overseas">
+                        해외
+                    </label>
+                </fieldset>
+
+                <label class="filter-item">
+                    <span>장르</span>
+                    <select id="genre-select" aria-label="장르 선택">
+                        <option value="all">전체 장르</option>
+                    </select>
+                </label>
+
+                <fieldset class="filter-item">
+                    <legend>정렬</legend>
+                    <label>
+                        <input type="radio" name="sort" value="score" checked>
+                        선호도 높은 순
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="title">
+                        제목 가나다 순
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="date">
+                        최신 개봉일 순
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="visitors">
+                        관객 수 많은 순
+                    </label>
+                </fieldset>
+
+                <fieldset class="filter-item">
+                    <legend>보기 구분</legend>
+                    <label>
+                        <input type="radio" name="view-mode" value="overall" checked>
+                        통합 보기
+                    </label>
+                    <label>
+                        <input type="radio" name="view-mode" value="genre">
+                        장르별 보기
+                    </label>
+                    <label>
+                        <input type="radio" name="view-mode" value="nationality">
+                        국적별 보기
+                    </label>
+                </fieldset>
+            </div>
+        </section>
+
+        <section class="summary" aria-label="장르 요약">
+            <h2>장르별 평균 선호도</h2>
+            <div class="summary-cards" id="genre-summary"></div>
+        </section>
+
+        <section class="table-section" aria-label="영화 순위">
+            <div class="section-header">
+                <h2>상위 100편 목록</h2>
+                <p id="result-count"></p>
+            </div>
+            <div class="table-controls">
+                <label for="limit-select" class="table-control">
+                    <span>표시 개수</span>
+                    <select id="limit-select" aria-label="표시 개수 선택">
+                        <option value="10">10편</option>
+                        <option value="20">20편</option>
+                        <option value="50">50편</option>
+                        <option value="100" selected>100편</option>
+                    </select>
+                </label>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <caption class="visually-hidden">SNS 리뷰 기반 한국 개봉 영화 선호도 순위</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">순위</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">국적</th>
+                            <th scope="col">장르</th>
+                            <th scope="col">개봉일</th>
+                            <th scope="col">상영관 수</th>
+                            <th scope="col">관객 수</th>
+                            <th scope="col">선호도 점수</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movies-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="insights" aria-label="상관 분석">
+            <div class="section-header">
+                <h2>선호도와 상영관 수 상관 분석</h2>
+                <p id="correlation-value" class="correlation-value"></p>
+            </div>
+            <p id="correlation-trend" class="correlation-description"></p>
+            <div class="chart-wrapper">
+                <canvas id="correlation-chart" aria-label="선호도와 상영관 수 산점도"></canvas>
+            </div>
+        </section>
+
+        <section class="methodology" aria-label="산출 방식">
+            <h2>데이터 산출 기준</h2>
+            <ul>
+                <li>2023년 1월 이후 한국 극장 및 OTT를 통해 공개된 국내·해외 장편 작품을 포함했습니다.</li>
+                <li>주요 SNS(인스타그램, 트위터/X, 유튜브, 틱톡)의 공개 리뷰·언급량을 수집한 뒤 감성 분석을 통해 선호도 지수를 100점 만점으로 환산했습니다.</li>
+                <li>국내 작품은 <strong>Domestic</strong>, 해외 수입 작품은 <strong>Overseas</strong>로 구분했으며, 복수 장르 작품은 대표 장르 2개 이내로 정리했습니다.</li>
+                <li>동일 점수일 경우 최근 개봉작을 우선 배치했습니다.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <small>※ 데이터는 예시용으로 구성되었으며 실제 집계와 다를 수 있습니다.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-JTeWY5AvzkdxlIo0NGdisz8Iky3Uczdlz7YT1DoP70uQgmO6ijLJrVN6a8GN28AL" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
