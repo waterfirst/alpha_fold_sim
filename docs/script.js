@@ -509,7 +509,8 @@ const attachEvents = () => {
 
 const loadData = async () => {
     try {
-        const response = await fetch('data/movies.json');
+        const dataUrl = new URL('./data/movies.json', window.location.href);
+        const response = await fetch(dataUrl);
         if (!response.ok) {
             throw new Error('데이터를 불러오지 못했습니다.');
         }

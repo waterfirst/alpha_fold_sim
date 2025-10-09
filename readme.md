@@ -13,17 +13,17 @@
 - **다중 필터링**: 제목 검색, 국적, 장르, 정렬 옵션(선호도·제목·개봉일·관객 수)을 조합해 원하는 결과 탐색
 - **보기 구분 옵션**: 통합·장르별·국적별 그룹으로 랭킹을 묶어 원하는 시각으로 비교 가능
 - **표시 개수 선택**: 상위 10·20·50·100편 중 원하는 개수만 테이블에 노출
-- **정적 데이터 제공**: `data/movies.json`에 선호도, 개봉일, 원제, 국적, 장르, 관객 수, 상영관 수 정보 포함
+- **정적 데이터 제공**: `docs/data/movies.json`에 선호도, 개봉일, 원제, 국적, 장르, 관객 수, 상영관 수 정보 포함
 
 ## 사용 방법
 
 1. 저장소를 클론하거나 ZIP으로 내려받은 뒤 압축을 풉니다.
-2. 프로젝트 루트에서 `index.html`을 브라우저로 직접 열거나, 간단한 로컬 서버(`python -m http.server`)를 실행합니다.
+2. `docs/index.html`을 브라우저로 직접 열거나 `python -m http.server --directory docs 8000`으로 로컬 서버를 실행합니다.
 3. 상단 필터와 보기 옵션(정렬·보기 구분·표시 개수)을 조합해 원하는 조건을 선택하면 테이블과 장르 요약이 즉시 갱신됩니다.
 
 ## 데이터 구조
 
-`data/movies.json` 파일은 다음과 같은 필드를 갖습니다.
+`docs/data/movies.json` 파일은 다음과 같은 필드를 갖습니다.
 
 ```json
 {
@@ -52,9 +52,18 @@
 
 ## 커스텀 데이터로 교체하기
 
-1. `data/movies.json`의 `movies` 배열을 원하는 데이터로 교체합니다.
+1. `docs/data/movies.json`의 `movies` 배열을 원하는 데이터로 교체합니다.
 2. `preference_score`는 0~100 사이 값(소수점 허용)으로 기입합니다.
 3. 로컬 서버를 재시작하거나 페이지를 새로고침하면 즉시 반영됩니다.
+
+## GitHub Pages 배포하기
+
+1. 이 저장소를 GitHub에 푸시합니다.
+2. 저장소의 **Settings ▸ Pages**로 이동합니다.
+3. **Deploy from a branch**를 선택하고, **Branch**는 `main`, **Folder**는 `/docs`로 지정한 뒤 **Save**를 누릅니다.
+4. 몇 분 뒤 생성되는 GitHub Pages URL에 접속하면 `docs` 폴더의 정적 사이트가 그대로 노출됩니다.
+
+> GitHub Pages에 배포된 후에도 `scripts/generate_movie_dataset.py`를 실행하면 최신 데이터가 `docs/data/movies.json`에 저장되어 곧바로 배포본에 반영됩니다.
 
 ## 라이선스
 

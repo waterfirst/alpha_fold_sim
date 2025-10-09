@@ -1,6 +1,7 @@
 import json
 import hashlib
 from datetime import date
+from pathlib import Path
 
 
 def _deterministic_value(title: str, base: int, span: int) -> int:
@@ -1282,5 +1283,9 @@ for movie in movies:
 movies.sort(key=lambda m: m["preference_score"], reverse=True)
 movies = movies[:100]
 
-with open("data/movies.json", "w", encoding="utf-8") as f:
+root_dir = Path(__file__).resolve().parents[1]
+dataset_path = root_dir / "docs" / "data" / "movies.json"
+dataset_path.parent.mkdir(parents=True, exist_ok=True)
+
+with dataset_path.open("w", encoding="utf-8") as f:
     json.dump({"generated_on": date.today().isoformat(), "movies": movies}, f, ensure_ascii=False, indent=2)
