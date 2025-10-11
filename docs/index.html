@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 개봉작 선호도 TOP 100</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <h1>한국 개봉 영화 선호도 TOP 100</h1>
+            <p>
+                최근 1년 사이 한국에서 개봉한 국내·해외 작품들의 SNS 리뷰를 모아 선호도 점수를 산출했습니다.
+                장르와 국적에 따라 분리된 상위 100편의 랭킹을 한눈에 확인해보세요.
+            </p>
+            <div class="meta-info" id="meta-info"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="filters" aria-label="필터">
+            <h2>필터</h2>
+            <div class="filters-grid">
+                <label class="filter-item">
+                    <span>제목 검색</span>
+                    <input type="search" id="search-input" placeholder="영화 제목을 입력하세요" aria-label="영화 제목 검색">
+                </label>
+
+                <fieldset class="filter-item">
+                    <legend>국적 구분</legend>
+                    <label>
+                        <input type="radio" name="nationality" value="all" checked>
+                        전체
+                    </label>
+                    <label>
+                        <input type="radio" name="nationality" value="Domestic">
+                        국내
+                    </label>
+                    <label>
+                        <input type="radio" name="nationality" value="Overseas">
+                        해외
+                    </label>
+                </fieldset>
+
+                <label class="filter-item">
+                    <span>장르</span>
+                    <select id="genre-select" aria-label="장르 선택">
+                        <option value="all">전체 장르</option>
+                    </select>
+                </label>
+
+                <fieldset class="filter-item">
+                    <legend>정렬</legend>
+                    <label>
+                        <input type="radio" name="sort" value="score" checked>
+                        선호도 높은 순
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="title">
+                        제목 가나다 순
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="date">
+                        최신 개봉일 순
+                    </label>
+                    <label>
+                        <input type="radio" name="sort" value="visitors">
+                        관객 수 많은 순
+                    </label>
+                </fieldset>
+
+                <fieldset class="filter-item">
+                    <legend>보기 구분</legend>
+                    <label>
+                        <input type="radio" name="view-mode" value="overall" checked>
+                        통합 보기
+                    </label>
+                    <label>
+                        <input type="radio" name="view-mode" value="genre">
+                        장르별 보기
+                    </label>
+                    <label>
+                        <input type="radio" name="view-mode" value="nationality">
+                        국적별 보기
+                    </label>
+                </fieldset>
+            </div>
+        </section>
+
+        <section class="summary" aria-label="장르 요약">
+            <h2>장르별 평균 선호도</h2>
+            <div class="summary-cards" id="genre-summary"></div>
+        </section>
+
+        <section class="table-section" aria-label="영화 순위">
+            <div class="section-header">
+                <h2>상위 100편 목록</h2>
+                <p id="result-count"></p>
+            </div>
+            <div class="table-controls">
+                <label for="limit-select" class="table-control">
+                    <span>표시 개수</span>
+                    <select id="limit-select" aria-label="표시 개수 선택">
+                        <option value="10">10편</option>
+                        <option value="20">20편</option>
+                        <option value="50">50편</option>
+                        <option value="100" selected>100편</option>
+                    </select>
+                </label>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <caption class="visually-hidden">SNS 리뷰 기반 한국 개봉 영화 선호도 순위</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">순위</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">국적</th>
+                            <th scope="col">장르</th>
+                            <th scope="col">개봉일</th>
+                            <th scope="col">상영관 수</th>
+                            <th scope="col">관객 수</th>
+                            <th scope="col">선호도 점수</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movies-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="insights" aria-label="상관 분석">
+            <div class="section-header">
+                <h2>선호도와 상영관 수 상관 분석</h2>
+                <p id="correlation-value" class="correlation-value"></p>
+            </div>
+            <p id="correlation-trend" class="correlation-description"></p>
+            <div class="chart-wrapper">
+                <canvas id="correlation-chart" aria-label="선호도와 상영관 수 산점도"></canvas>
+            </div>
+        </section>
+
+        <section class="methodology" aria-label="산출 방식">
+            <h2>데이터 산출 기준</h2>
+            <ul>
+                <li>2023년 1월 이후 한국 극장 및 OTT를 통해 공개된 국내·해외 장편 작품을 포함했습니다.</li>
+                <li>주요 SNS(인스타그램, 트위터/X, 유튜브, 틱톡)의 공개 리뷰·언급량을 수집한 뒤 감성 분석을 통해 선호도 지수를 100점 만점으로 환산했습니다.</li>
+                <li>국내 작품은 <strong>Domestic</strong>, 해외 수입 작품은 <strong>Overseas</strong>로 구분했으며, 복수 장르 작품은 대표 장르 2개 이내로 정리했습니다.</li>
+                <li>동일 점수일 경우 최근 개봉작을 우선 배치했습니다.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <small>※ 데이터는 예시용으로 구성되었으며 실제 집계와 다를 수 있습니다.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js" integrity="sha384-JTeWY5AvzkdxlIo0NGdisz8Iky3Uczdlz7YT1DoP70uQgmO6ijLJrVN6a8GN28AL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1397 @@
+{
+  "generated_on": "2025-10-11",
+  "movies": [
+    {
+      "title": "Oppenheimer",
+      "original_title": "Oppenheimer",
+      "release_date": "2023-08-15",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Historical",
+        "Drama"
+      ],
+      "preference_score": 96.0,
+      "visitors": 561300,
+      "screen_count": 134
+    },
+    {
+      "title": "Exhuma",
+      "original_title": "파묘",
+      "release_date": "2024-02-22",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Mystery",
+        "Thriller"
+      ],
+      "preference_score": 95.1,
+      "visitors": 1351900,
+      "screen_count": 341
+    },
+    {
+      "title": "Barbie",
+      "original_title": "Barbie",
+      "release_date": "2023-07-19",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Comedy",
+        "Fantasy"
+      ],
+      "preference_score": 94.8,
+      "visitors": 471500,
+      "screen_count": 208
+    },
+    {
+      "title": "12.12: The Day",
+      "original_title": "서울의 봄",
+      "release_date": "2023-11-22",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Historical",
+        "Drama"
+      ],
+      "preference_score": 94.3,
+      "visitors": 1846800,
+      "screen_count": 230
+    },
+    {
+      "title": "Spider-Man: Across the Spider-Verse",
+      "original_title": "Spider-Man: Across the Spider-Verse",
+      "release_date": "2023-06-21",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Animation",
+        "Action"
+      ],
+      "preference_score": 94.2,
+      "visitors": 606700,
+      "screen_count": 155
+    },
+    {
+      "title": "Wonka",
+      "original_title": "Wonka",
+      "release_date": "2023-12-06",
+      "nationality": "Overseas",
+      "origin_country": "United Kingdom",
+      "genre": [
+        "Family",
+        "Fantasy"
+      ],
+      "preference_score": 93.7,
+      "visitors": 1117600,
+      "screen_count": 215
+    },
+    {
+      "title": "The Marvels",
+      "original_title": "The Marvels",
+      "release_date": "2023-11-08",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "preference_score": 93.2,
+      "visitors": 395400,
+      "screen_count": 162
+    },
+    {
+      "title": "Concrete Utopia",
+      "original_title": "콘크리트 유토피아",
+      "release_date": "2023-08-09",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Disaster",
+        "Thriller"
+      ],
+      "preference_score": 92.8,
+      "visitors": 1602200,
+      "screen_count": 240
+    },
+    {
+      "title": "Guardians of the Galaxy Vol. 3",
+      "original_title": "Guardians of the Galaxy Vol. 3",
+      "release_date": "2023-05-03",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "preference_score": 92.6,
+      "visitors": 1387400,
+      "screen_count": 132
+    },
+    {
+      "title": "The Roundup: Punishment",
+      "original_title": "범죄도시4",
+      "release_date": "2024-04-24",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Action",
+        "Crime"
+      ],
+      "preference_score": 92.1,
+      "visitors": 1701500,
+      "screen_count": 221
+    },
+    {
+      "title": "John Wick: Chapter 4",
+      "original_title": "John Wick: Chapter 4",
+      "release_date": "2023-04-12",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "preference_score": 92.0,
+      "visitors": 811000,
+      "screen_count": 117
+    },
+    {
+      "title": "Alienoid: Return to the Future",
+      "original_title": "외계+인 2부",
+      "release_date": "2024-01-10",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Sci-Fi",
+        "Fantasy"
+      ],
+      "preference_score": 91.6,
+      "visitors": 838200,
+      "screen_count": 280
+    },
+    {
+      "title": "Mission: Impossible – Dead Reckoning Part One",
+      "original_title": "Mission: Impossible – Dead Reckoning Part One",
+      "release_date": "2023-07-12",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "preference_score": 91.5,
+      "visitors": 365700,
+      "screen_count": 210
+    },
+    {
+      "title": "Citizen of a Kind",
+      "original_title": "시민 덕희",
+      "release_date": "2024-01-24",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Crime",
+        "Comedy"
+      ],
+      "preference_score": 91.4,
+      "visitors": 1816900,
+      "screen_count": 263
+    },
+    {
+      "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "original_title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "release_date": "2023-11-15",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "preference_score": 91.1,
+      "visitors": 949600,
+      "screen_count": 155
+    },
+    {
+      "title": "Ransomed",
+      "original_title": "비공식작전",
+      "release_date": "2023-08-02",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "preference_score": 90.9,
+      "visitors": 598300,
+      "screen_count": 317
+    },
+    {
+      "title": "Indiana Jones and the Dial of Destiny",
+      "original_title": "Indiana Jones and the Dial of Destiny",
+      "release_date": "2023-06-28",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Adventure",
+        "Action"
+      ],
+      "preference_score": 90.6,
+      "visitors": 1061700,
+      "screen_count": 127
+    },
+    {
+      "title": "Sleep",
+      "original_title": "잠",
+      "release_date": "2023-09-06",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Horror",
+        "Mystery"
+      ],
+      "preference_score": 90.3,
+      "visitors": 606900,
+      "screen_count": 291
+    },
+    {
+      "title": "The Super Mario Bros. Movie",
+      "original_title": "The Super Mario Bros. Movie",
+      "release_date": "2023-04-26",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Animation",
+        "Adventure"
+      ],
+      "preference_score": 90.1,
+      "visitors": 537700,
+      "screen_count": 230
+    },
+    {
+      "title": "Smugglers",
+      "original_title": "밀수",
+      "release_date": "2023-07-26",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Crime",
+        "Action"
+      ],
+      "preference_score": 89.7,
+      "visitors": 1384600,
+      "screen_count": 356
+    },
+    {
+      "title": "Elemental",
+      "original_title": "Elemental",
+      "release_date": "2023-06-14",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Animation",
+        "Romance"
+      ],
+      "preference_score": 89.7,
+      "visitors": 474400,
+      "screen_count": 187
+    },
+    {
+      "title": "Soulmate",
+      "original_title": "소울메이트",
+      "release_date": "2023-03-15",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Romance",
+        "Drama"
+      ],
+      "preference_score": 89.4,
+      "visitors": 2361200,
+      "screen_count": 354
+    },
+    {
+      "title": "The Creator",
+      "original_title": "The Creator",
+      "release_date": "2023-09-27",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "preference_score": 89.2,
+      "visitors": 1314300,
+      "screen_count": 188
+    },
+    {
+      "title": "Honeysweet",
+      "original_title": "달짝지근해: 7510",
+      "release_date": "2023-08-15",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Romance",
+        "Comedy"
+      ],
+      "preference_score": 88.9,
+      "visitors": 1826700,
+      "screen_count": 251
+    },
+    {
+      "title": "Dune: Part Two",
+      "original_title": "Dune: Part Two",
+      "release_date": "2024-02-28",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Sci-Fi",
+        "Adventure"
+      ],
+      "preference_score": 88.9,
+      "visitors": 478100,
+      "screen_count": 211
+    },
+    {
+      "title": "Mission: Cross",
+      "original_title": "하이재킹",
+      "release_date": "2024-06-21",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "preference_score": 88.6,
+      "visitors": 958400,
+      "screen_count": 315
+    },
+    {
+      "title": "Godzilla Minus One",
+      "original_title": "ゴジラ-1.0",
+      "release_date": "2023-12-06",
+      "nationality": "Overseas",
+      "origin_country": "Japan",
+      "genre": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "preference_score": 88.5,
+      "visitors": 1327500,
+      "screen_count": 223
+    },
+    {
+      "title": "Parasite: Grey",
+      "original_title": "기생충: 그레이",
+      "release_date": "2024-05-15",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Thriller",
+        "Drama"
+      ],
+      "preference_score": 88.2,
+      "visitors": 2319300,
+      "screen_count": 360
+    },
+    {
+      "title": "The Boy and the Heron",
+      "original_title": "君たちはどう生きるか",
+      "release_date": "2023-12-07",
+      "nationality": "Overseas",
+      "origin_country": "Japan",
+      "genre": [
+        "Animation",
+        "Fantasy"
+      ],
+      "preference_score": 88.2,
+      "visitors": 1498000,
+      "screen_count": 183
+    },
+    {
+      "title": "The Plot",
+      "original_title": "더 플롯",
+      "release_date": "2024-04-03",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "preference_score": 87.9,
+      "visitors": 2039200,
+      "screen_count": 315
+    },
+    {
+      "title": "Suzume",
+      "original_title": "すずめの戸締まり",
+      "release_date": "2023-03-08",
+      "nationality": "Overseas",
+      "origin_country": "Japan",
+      "genre": [
+        "Animation",
+        "Adventure"
+      ],
+      "preference_score": 87.9,
+      "visitors": 451300,
+      "screen_count": 202
+    },
+    {
+      "title": "Past Lives",
+      "original_title": "Past Lives",
+      "release_date": "2023-06-14",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Romance",
+        "Drama"
+      ],
+      "preference_score": 87.6,
+      "visitors": 408800,
+      "screen_count": 159
+    },
+    {
+      "title": "The Owl",
+      "original_title": "올빼미",
+      "release_date": "2022-11-23",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Historical",
+        "Thriller"
+      ],
+      "preference_score": 87.4,
+      "visitors": 1582600,
+      "screen_count": 207
+    },
+    {
+      "title": "Anatomy of a Fall",
+      "original_title": "Anatomie d'une chute",
+      "release_date": "2023-10-25",
+      "nationality": "Overseas",
+      "origin_country": "France",
+      "genre": [
+        "Thriller",
+        "Drama"
+      ],
+      "preference_score": 87.2,
+      "visitors": 511000,
+      "screen_count": 131
+    },
+    {
+      "title": "Wonderland",
+      "original_title": "원더랜드",
+      "release_date": "2024-06-05",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Sci-Fi",
+        "Romance"
+      ],
+      "preference_score": 87.1,
+      "visitors": 1926400,
+      "screen_count": 228
+    },
+    {
+      "title": "The Boys",
+      "original_title": "소년들",
+      "release_date": "2023-11-01",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "preference_score": 86.8,
+      "visitors": 1581700,
+      "screen_count": 283
+    },
+    {
+      "title": "Napoleon",
+      "original_title": "Napoleon",
+      "release_date": "2023-11-22",
+      "nationality": "Overseas",
+      "origin_country": "United Kingdom",
+      "genre": [
+        "Historical",
+        "Drama"
+      ],
+      "preference_score": 86.8,
+      "visitors": 1459800,
+      "screen_count": 141
+    },
+    {
+      "title": "The Killers",
+      "original_title": "더 킬러: 죽어도 되는 아이",
+      "release_date": "2023-12-27",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "preference_score": 86.5,
+      "visitors": 1585700,
+      "screen_count": 276
+    },
+    {
+      "title": "Killers of the Flower Moon",
+      "original_title": "Killers of the Flower Moon",
+      "release_date": "2023-10-19",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "preference_score": 86.4,
+      "visitors": 1352200,
+      "screen_count": 130
+    },
+    {
+      "title": "The Devil's Deal",
+      "original_title": "대외비",
+      "release_date": "2023-03-01",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Crime",
+        "Political"
+      ],
+      "preference_score": 86.2,
+      "visitors": 1828500,
+      "screen_count": 307
+    },
+    {
+      "title": "The Holdovers",
+      "original_title": "The Holdovers",
+      "release_date": "2023-11-01",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Comedy",
+        "Drama"
+      ],
+      "preference_score": 86.0,
+      "visitors": 1339900,
+      "screen_count": 192
+    },
+    {
+      "title": "Switch",
+      "original_title": "스위치",
+      "release_date": "2023-01-04",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Family",
+        "Comedy"
+      ],
+      "preference_score": 85.9,
+      "visitors": 1026700,
+      "screen_count": 311
+    },
+    {
+      "title": "Hero",
+      "original_title": "영웅",
+      "release_date": "2022-12-21",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Musical",
+        "Historical"
+      ],
+      "preference_score": 85.6,
+      "visitors": 1187200,
+      "screen_count": 371
+    },
+    {
+      "title": "Poor Things",
+      "original_title": "Poor Things",
+      "release_date": "2024-02-14",
+      "nationality": "Overseas",
+      "origin_country": "United Kingdom",
+      "genre": [
+        "Sci-Fi",
+        "Romance"
+      ],
+      "preference_score": 85.6,
+      "visitors": 1305800,
+      "screen_count": 201
+    },
+    {
+      "title": "Kim's Video",
+      "original_title": "킴스 비디오",
+      "release_date": "2023-11-15",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Documentary"
+      ],
+      "preference_score": 85.2,
+      "visitors": 1942700,
+      "screen_count": 214
+    },
+    {
+      "title": "Next Goal Wins",
+      "original_title": "Next Goal Wins",
+      "release_date": "2024-01-10",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Comedy",
+        "Sports"
+      ],
+      "preference_score": 85.2,
+      "visitors": 1118900,
+      "screen_count": 219
+    },
+    {
+      "title": "Road to Boston",
+      "original_title": "1947 보스톤",
+      "release_date": "2023-09-27",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Sports",
+        "Drama"
+      ],
+      "preference_score": 84.9,
+      "visitors": 982600,
+      "screen_count": 294
+    },
+    {
+      "title": "Migration",
+      "original_title": "Migration",
+      "release_date": "2023-12-27",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Animation",
+        "Family"
+      ],
+      "preference_score": 84.9,
+      "visitors": 593300,
+      "screen_count": 175
+    },
+    {
+      "title": "Rebound",
+      "original_title": "리바운드",
+      "release_date": "2023-04-05",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Sports",
+        "Drama"
+      ],
+      "preference_score": 84.6,
+      "visitors": 1345100,
+      "screen_count": 368
+    },
+    {
+      "title": "Five Nights at Freddy's",
+      "original_title": "Five Nights at Freddy's",
+      "release_date": "2023-10-25",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Horror",
+        "Thriller"
+      ],
+      "preference_score": 84.6,
+      "visitors": 907800,
+      "screen_count": 193
+    },
+    {
+      "title": "Cobweb",
+      "original_title": "거미집",
+      "release_date": "2023-09-27",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama",
+        "Comedy"
+      ],
+      "preference_score": 84.4,
+      "visitors": 852600,
+      "screen_count": 331
+    },
+    {
+      "title": "The Whale",
+      "original_title": "The Whale",
+      "release_date": "2023-03-01",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Drama"
+      ],
+      "preference_score": 84.2,
+      "visitors": 669900,
+      "screen_count": 176
+    },
+    {
+      "title": "Phantom",
+      "original_title": "유령",
+      "release_date": "2023-01-18",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Spy",
+        "Action"
+      ],
+      "preference_score": 84.1,
+      "visitors": 1474000,
+      "screen_count": 303
+    },
+    {
+      "title": "Asteroid City",
+      "original_title": "Asteroid City",
+      "release_date": "2023-08-09",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Comedy",
+        "Drama"
+      ],
+      "preference_score": 83.9,
+      "visitors": 421300,
+      "screen_count": 203
+    },
+    {
+      "title": "Unlocked",
+      "original_title": "스마트폰을 떨어뜨렸을 뿐인데",
+      "release_date": "2023-02-17",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Thriller"
+      ],
+      "preference_score": 83.8,
+      "visitors": 1905200,
+      "screen_count": 297
+    },
+    {
+      "title": "The Moon",
+      "original_title": "더 문",
+      "release_date": "2023-08-02",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "preference_score": 83.5,
+      "visitors": 1290200,
+      "screen_count": 206
+    },
+    {
+      "title": "Creed III",
+      "original_title": "Creed III",
+      "release_date": "2023-03-01",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Sports",
+        "Drama"
+      ],
+      "preference_score": 83.5,
+      "visitors": 1361000,
+      "screen_count": 111
+    },
+    {
+      "title": "My Name Is Loh Kiwan",
+      "original_title": "로기완",
+      "release_date": "2024-03-01",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama",
+        "Romance"
+      ],
+      "preference_score": 83.1,
+      "visitors": 1734300,
+      "screen_count": 357
+    },
+    {
+      "title": "Gran Turismo",
+      "original_title": "Gran Turismo",
+      "release_date": "2023-08-09",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Sports",
+        "Drama"
+      ],
+      "preference_score": 83.1,
+      "visitors": 992600,
+      "screen_count": 107
+    },
+    {
+      "title": "Victory",
+      "original_title": "비상선언",
+      "release_date": "2024-05-01",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama",
+        "Sports"
+      ],
+      "preference_score": 82.7,
+      "visitors": 1407000,
+      "screen_count": 260
+    },
+    {
+      "title": "Blue Beetle",
+      "original_title": "Blue Beetle",
+      "release_date": "2023-08-16",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "preference_score": 82.7,
+      "visitors": 1300800,
+      "screen_count": 109
+    },
+    {
+      "title": "Single in Seoul",
+      "original_title": "싱글 인 서울",
+      "release_date": "2023-11-29",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Romance",
+        "Comedy"
+      ],
+      "preference_score": 82.4,
+      "visitors": 2179600,
+      "screen_count": 268
+    },
+    {
+      "title": "The Flash",
+      "original_title": "The Flash",
+      "release_date": "2023-06-14",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "preference_score": 82.4,
+      "visitors": 551100,
+      "screen_count": 202
+    },
+    {
+      "title": "Greenhouse",
+      "original_title": "온 더 라인",
+      "release_date": "2024-02-07",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama"
+      ],
+      "preference_score": 82.1,
+      "visitors": 1864500,
+      "screen_count": 297
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Mutant Mayhem",
+      "original_title": "Teenage Mutant Ninja Turtles: Mutant Mayhem",
+      "release_date": "2023-08-02",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Animation",
+        "Action"
+      ],
+      "preference_score": 82.0,
+      "visitors": 602700,
+      "screen_count": 129
+    },
+    {
+      "title": "Honey Sweet",
+      "original_title": "허니 스위트",
+      "release_date": "2024-01-17",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Romance",
+        "Drama"
+      ],
+      "preference_score": 81.9,
+      "visitors": 2075700,
+      "screen_count": 290
+    },
+    {
+      "title": "Sleep Well",
+      "original_title": "굿나잇",
+      "release_date": "2024-04-10",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Romance",
+        "Fantasy"
+      ],
+      "preference_score": 81.6,
+      "visitors": 1356800,
+      "screen_count": 253
+    },
+    {
+      "title": "Haunted Mansion",
+      "original_title": "Haunted Mansion",
+      "release_date": "2023-07-26",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Comedy",
+        "Horror"
+      ],
+      "preference_score": 81.6,
+      "visitors": 1418700,
+      "screen_count": 204
+    },
+    {
+      "title": "Against the Light",
+      "original_title": "빛과 철",
+      "release_date": "2024-02-14",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Thriller",
+        "Mystery"
+      ],
+      "preference_score": 81.3,
+      "visitors": 1538300,
+      "screen_count": 196
+    },
+    {
+      "title": "The Little Mermaid",
+      "original_title": "The Little Mermaid",
+      "release_date": "2023-05-24",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Fantasy",
+        "Romance"
+      ],
+      "preference_score": 81.2,
+      "visitors": 1103500,
+      "screen_count": 181
+    },
+    {
+      "title": "In Water",
+      "original_title": "물안에서",
+      "release_date": "2023-09-13",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Art",
+        "Drama"
+      ],
+      "preference_score": 81.0,
+      "visitors": 2253000,
+      "screen_count": 317
+    },
+    {
+      "title": "Evil Dead Rise",
+      "original_title": "Evil Dead Rise",
+      "release_date": "2023-04-19",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Horror",
+        "Thriller"
+      ],
+      "preference_score": 80.9,
+      "visitors": 1268100,
+      "screen_count": 130
+    },
+    {
+      "title": "The Hill of Secrets",
+      "original_title": "비밀의 언덕",
+      "release_date": "2023-06-21",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Coming-of-age",
+        "Drama"
+      ],
+      "preference_score": 80.7,
+      "visitors": 1321400,
+      "screen_count": 280
+    },
+    {
+      "title": "Insidious: The Red Door",
+      "original_title": "Insidious: The Red Door",
+      "release_date": "2023-07-05",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Horror",
+        "Mystery"
+      ],
+      "preference_score": 80.6,
+      "visitors": 757500,
+      "screen_count": 130
+    },
+    {
+      "title": "After School",
+      "original_title": "방과 후",
+      "release_date": "2024-03-20",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Thriller",
+        "Drama"
+      ],
+      "preference_score": 80.4,
+      "visitors": 1359600,
+      "screen_count": 261
+    },
+    {
+      "title": "The Nun II",
+      "original_title": "The Nun II",
+      "release_date": "2023-09-06",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Horror",
+        "Thriller"
+      ],
+      "preference_score": 80.2,
+      "visitors": 608600,
+      "screen_count": 216
+    },
+    {
+      "title": "Next Sohee",
+      "original_title": "다음 소희",
+      "release_date": "2023-02-08",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama"
+      ],
+      "preference_score": 80.1,
+      "visitors": 1804900,
+      "screen_count": 283
+    },
+    {
+      "title": "Saw X",
+      "original_title": "Saw X",
+      "release_date": "2023-09-27",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Horror",
+        "Thriller"
+      ],
+      "preference_score": 79.9,
+      "visitors": 699000,
+      "screen_count": 149
+    },
+    {
+      "title": "Our Season",
+      "original_title": "휴가",
+      "release_date": "2023-12-06",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama",
+        "Fantasy"
+      ],
+      "preference_score": 79.8,
+      "visitors": 535300,
+      "screen_count": 248
+    },
+    {
+      "title": "Talk to Me",
+      "original_title": "Talk to Me",
+      "release_date": "2023-08-09",
+      "nationality": "Overseas",
+      "origin_country": "Australia",
+      "genre": [
+        "Horror",
+        "Thriller"
+      ],
+      "preference_score": 79.6,
+      "visitors": 1378600,
+      "screen_count": 215
+    },
+    {
+      "title": "Silence",
+      "original_title": "사일런스",
+      "release_date": "2024-08-07",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Thriller"
+      ],
+      "preference_score": 79.4,
+      "visitors": 1139100,
+      "screen_count": 331
+    },
+    {
+      "title": "The Banshees of Inisherin",
+      "original_title": "The Banshees of Inisherin",
+      "release_date": "2023-02-01",
+      "nationality": "Overseas",
+      "origin_country": "Ireland",
+      "genre": [
+        "Drama",
+        "Comedy"
+      ],
+      "preference_score": 79.2,
+      "visitors": 857700,
+      "screen_count": 175
+    },
+    {
+      "title": "Because I Love You",
+      "original_title": "사랑하기 때문에",
+      "release_date": "2024-05-29",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama",
+        "Romance"
+      ],
+      "preference_score": 79.0,
+      "visitors": 648800,
+      "screen_count": 213
+    },
+    {
+      "title": "The Menu",
+      "original_title": "The Menu",
+      "release_date": "2023-01-11",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Thriller",
+        "Comedy"
+      ],
+      "preference_score": 78.9,
+      "visitors": 672000,
+      "screen_count": 132
+    },
+    {
+      "title": "Following",
+      "original_title": "팔로우",
+      "release_date": "2024-03-06",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Thriller",
+        "Mystery"
+      ],
+      "preference_score": 78.7,
+      "visitors": 1931300,
+      "screen_count": 244
+    },
+    {
+      "title": "A Haunting in Venice",
+      "original_title": "A Haunting in Venice",
+      "release_date": "2023-09-13",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Mystery",
+        "Thriller"
+      ],
+      "preference_score": 78.5,
+      "visitors": 684600,
+      "screen_count": 113
+    },
+    {
+      "title": "Sleepers",
+      "original_title": "슬리퍼스",
+      "release_date": "2024-01-31",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "preference_score": 78.3,
+      "visitors": 722000,
+      "screen_count": 285
+    },
+    {
+      "title": "The Equalizer 3",
+      "original_title": "The Equalizer 3",
+      "release_date": "2023-08-30",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Thriller"
+      ],
+      "preference_score": 78.2,
+      "visitors": 304300,
+      "screen_count": 131
+    },
+    {
+      "title": "The Tenants",
+      "original_title": "세입자",
+      "release_date": "2024-02-28",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Thriller",
+        "Horror"
+      ],
+      "preference_score": 78.0,
+      "visitors": 1028200,
+      "screen_count": 240
+    },
+    {
+      "title": "Fast X",
+      "original_title": "Fast X",
+      "release_date": "2023-05-17",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Adventure"
+      ],
+      "preference_score": 77.8,
+      "visitors": 633800,
+      "screen_count": 170
+    },
+    {
+      "title": "Fairy",
+      "original_title": "요정",
+      "release_date": "2024-04-17",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Fantasy",
+        "Drama"
+      ],
+      "preference_score": 77.7,
+      "visitors": 1019500,
+      "screen_count": 243
+    },
+    {
+      "title": "Transformers: Rise of the Beasts",
+      "original_title": "Transformers: Rise of the Beasts",
+      "release_date": "2023-06-06",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "preference_score": 77.4,
+      "visitors": 962500,
+      "screen_count": 133
+    },
+    {
+      "title": "Count",
+      "original_title": "카운트",
+      "release_date": "2023-02-22",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Sports",
+        "Comedy"
+      ],
+      "preference_score": 77.3,
+      "visitors": 1279600,
+      "screen_count": 267
+    },
+    {
+      "title": "Shazam! Fury of the Gods",
+      "original_title": "Shazam! Fury of the Gods",
+      "release_date": "2023-03-15",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Action",
+        "Fantasy"
+      ],
+      "preference_score": 77.1,
+      "visitors": 718700,
+      "screen_count": 128
+    },
+    {
+      "title": "Marui Video",
+      "original_title": "말없는 영화",
+      "release_date": "2024-03-27",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Horror"
+      ],
+      "preference_score": 76.9,
+      "visitors": 932700,
+      "screen_count": 223
+    },
+    {
+      "title": "The Exorcist: Believer",
+      "original_title": "The Exorcist: Believer",
+      "release_date": "2023-10-04",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Horror",
+        "Thriller"
+      ],
+      "preference_score": 76.7,
+      "visitors": 573200,
+      "screen_count": 163
+    },
+    {
+      "title": "Drama Special",
+      "original_title": "드라마 스페셜",
+      "release_date": "2024-05-08",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Drama"
+      ],
+      "preference_score": 76.4,
+      "visitors": 1915200,
+      "screen_count": 305
+    },
+    {
+      "title": "The Killer",
+      "original_title": "The Killer",
+      "release_date": "2023-10-27",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Thriller",
+        "Action"
+      ],
+      "preference_score": 76.3,
+      "visitors": 958000,
+      "screen_count": 126
+    },
+    {
+      "title": "Duty After School",
+      "original_title": "방과 후 전쟁활동",
+      "release_date": "2023-03-31",
+      "nationality": "Domestic",
+      "origin_country": "South Korea",
+      "genre": [
+        "Sci-Fi",
+        "Action"
+      ],
+      "preference_score": 76.0,
+      "visitors": 1641200,
+      "screen_count": 212
+    },
+    {
+      "title": "Leave the World Behind",
+      "original_title": "Leave the World Behind",
+      "release_date": "2023-12-08",
+      "nationality": "Overseas",
+      "origin_country": "United States",
+      "genre": [
+        "Thriller",
+        "Drama"
+      ],
+      "preference_score": 75.9,
+      "visitors": 1316700,
+      "screen_count": 101
+    }
+  ]
+}
