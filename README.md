@@ -1,95 +1,46 @@
-# AlphaFold 단백질 접힘 시뮬레이션
+# Protein Folding Lab
 
-이 프로젝트는 단백질이 어떻게 접히는지, 그리고 AlphaFold가 어떻게 단백질 구조를 예측하는지를 시각적으로 보여주는 웹 기반 시뮬레이션입니다.
+아미노산 서열과 환경 조건에 따른 단백질 접힘을 **2차원 coarse-grained Monte Carlo 모델**로 탐구하는 교육용 웹 시뮬레이터입니다.
 
-## 주요 기능
+## Live demo
 
-- **다양한 단백질 구조 예제**: 기본 구조, 알파 헬릭스, 베타 시트, 글로불러 단백질, 효소 구조, 막 단백질 등
-- **인터랙티브 3D 시각화**: 마우스로 드래그하여 단백질 구조를 3D로 회전 가능
-- **실시간 점수 피드백**: 단백질 구조의 안정성을 실시간으로 평가
-- **아미노산 간 결합 시각화**: 다양한 화학적 결합(수소 결합, 황 결합 등)을 시각적으로 표현
-- **교육용 정보 제공**: 단백질 접힘의 원리와 AlphaFold의 작동 원리에 대한 설명
+https://waterfirst.github.io/alpha_fold_sim/
 
-## 데모
+## What it computes
 
-![AlphaFold 시뮬레이션 데모](demo.gif)
+- 20종 아미노산 1-letter sequence 입력(8–48 aa)
+- 결합 길이 조화 퍼텐셜 `E_bond`
+- 사슬 굽힘 비용 `E_bend`
+- 소수성·극성·전하·시스테인 비결합 상호작용 `E_nonbond`
+- 물·변성제·막 환경 항 `E_solvent`
+- Metropolis acceptance `P = min(1, exp(-ΔE/T))`
+- 총에너지, 회전반경 `Rg`, 비결합 접촉수, 수용률
+- 실시간 에너지 경로와 residue contact map
 
-## 설치 및 실행
+## Learning goals
 
-이 프로젝트는 웹 기반으로 작동하며, 별도의 설치가 필요 없습니다. 다음 단계를 따라 로컬에서 실행할 수 있습니다:
+1. 단백질 접힘을 하나의 결정론적 애니메이션이 아니라 확률적 에너지 경관 탐색으로 이해합니다.
+2. 동일 서열도 온도·용매·초기상태에 따라 다른 경로를 거칠 수 있음을 비교합니다.
+3. 소수성 붕괴, 전하 상호작용과 열적 요동의 경쟁을 관찰합니다.
+4. 물리 기반 교육 모델과 AlphaFold의 학습 기반 구조 예측을 구분합니다.
 
-1. 이 저장소를 클론합니다:
-   ```
-   git clone https://github.com/waterfirst/alpha_fold_sim.git
-   ```
+## Scientific scope
 
-2. 프로젝트 폴더로 이동합니다:
-   ```
-   cd alphafold-simulation
-   ```
+이 앱은 실제 AlphaFold, 원자 수준 molecular dynamics, 정량적인 구조 예측 도구가 아닙니다. 상호작용 계수와 단위는 교육을 위한 reduced unit이며, 계산 결과를 연구·의료·산업 판단에 사용하면 안 됩니다. AlphaFold의 pLDDT와 PAE는 이 앱의 에너지나 Monte Carlo 수용률과 다른 개념입니다.
 
-3. `index.html` 파일을 웹 브라우저에서 엽니다.
-   - 로컬 서버를 사용하는 경우: `python -m http.server` 명령어를 사용한 후 브라우저에서 `localhost:8000`을 열 수 있습니다.
+## Run locally
 
-## 기술 스택
+정적 파일만 사용합니다.
+
+```bash
+python3 -m http.server 8000
+```
+
+브라우저에서 `http://localhost:8000`을 엽니다.
+
+## Stack
 
 - HTML5
 - CSS3
-- JavaScript (ES6+)
-- SVG
-
-## 파일 구조
-
-- `index.html` - 메인 HTML 파일
-- `styles.css` - 스타일시트
-- `script.js` - 시뮬레이션 로직과 인터랙션 코드
-
-## 사용 방법
-
-1. 원하는 단백질 구조 예제를 선택합니다.
-2. "AlphaFold 실행하기" 버튼을 클릭하여 단백질 접힘 시뮬레이션을 시작합니다.
-3. 마우스로 구조를 드래그하여 3D 회전을 경험하세요.
-4. 마우스 휠을 사용하여 확대/축소할 수 있습니다.
-5. 단백질의 안정성을 나타내는 점수를 확인하세요.
-6. "단백질 정보"와 "AlphaFold 설명" 탭을 통해 더 많은 정보를 얻을 수 있습니다.
-
-## 아미노산 유형 설명
-
-- **소수성(H)**: 물을 싫어해 단백질 내부로 숨는 경향이 있습니다.
-- **친수성(P)**: 물을 좋아해 단백질 외부로 나오는 경향이 있습니다.
-- **특수 기능(S)**: 효소 활성, 기질 결합 등 특별한 역할을 합니다.
-- **시스테인(C)**: 황 결합을 형성해 단백질 구조를 안정화시킵니다.
-- **글리신(G)**: 작고 유연해 단백질의 구부러짐에 중요합니다.
-
-## 확장 계획
-
-이 프로젝트의 향후 계획은 다음과 같습니다:
-
-- 사용자 정의 아미노산 서열 입력 기능
-- 더 복잡한 단백질 구조 예제 추가
-- 실제 PDB 데이터 파일 지원
-- 온도와 pH 변화에 따른 단백질 안정성 시뮬레이션
-- 사용자 정의 조건에서의 단백질 접힘 예측
-
-## 기여하기
-
-이 프로젝트에 기여하고 싶으시다면:
-
-1. 이 저장소를 포크하세요.
-2. 새 기능 브랜치를 만드세요: `git checkout -b feature/amazing-feature`
-3. 변경사항을 커밋하세요: `git commit -m 'Add some amazing feature'`
-4. 브랜치에 푸시하세요: `git push origin feature/amazing-feature`
-5. Pull Request를 제출하세요.
-
-## 라이선스
-
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
-
-## 감사의 글
-
-- [DeepMind AlphaFold](https://deepmind.com/research/case-studies/alphafold) - 영감의 원천
-- 모든 기여자와 테스터들에게 감사드립니다.
-
----
-
-**참고**: 이 시뮬레이션은 교육 목적으로 개발되었으며, 실제 AlphaFold의 복잡한 알고리즘을 간소화하여 구현했습니다. 정확한 단백질 구조 예측을 위해서는 [AlphaFold Colab](https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb)이나 공식 도구를 사용하시기 바랍니다.
+- Vanilla JavaScript
+- Canvas 2D
