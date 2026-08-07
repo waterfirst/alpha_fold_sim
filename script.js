@@ -100,7 +100,7 @@ function interactionStrength(codeA,codeB,r) {
   let energy=0;
   const gaussian=(center,width)=>Math.exp(-Math.pow((r-center)/width,2));
 
-  if(a==='hydrophobic' && b==='hydrophobic') energy-=1.35*solventScale*gaussian(1.18,.42);
+  if(a==='hydrophobic' && b==='hydrophobic') energy-=2.05*solventScale*gaussian(1.18,.42);
   if(codeA==='C' && codeB==='C') energy-=2.15*solventScale*gaussian(1.25,.25);
   if(a==='polar' && b==='polar') energy-=.22*solventScale*gaussian(1.28,.5);
   if((a==='positive' && b==='negative') || (a==='negative' && b==='positive')) energy-=.88*solventScale*Math.exp(-r/1.55);
@@ -145,12 +145,28 @@ function monteCarloStep(count=1) {
   const temperature=Number(ui.temperature.value);
   const moveSize=.13+.10*Math.sqrt(temperature);
   for(let attempt=0;attempt<count;attempt++) {
-    const index=Math.floor(state.rng()*state.positions.length);
-    const point=state.positions[index];
-    const previous={x:point.x,y:point.y};
     const oldEnergy=state.energy.total;
-    point.x+=(state.rng()-.5)*2*moveSize;
-    point.y+=(state.rng()-.5)*2*moveSize;
+    let restore;
+    if(state.rng()<.34 && state.positions.length>8) {
+      const pivot=1+Math.floor(state.rng()*(state.positions.length-2));
+      const rotateTail=state.rng()<.5;
+      const indices=[];
+      if(rotateTail) for(let i=pivot+1;i<state.positions.length;i++) indices.push(i);
+      else for(let i=0;i<pivot;i++) indices.push(i);
+      const previous=indices.map(i=>({i,x:state.positions[i].x,y:state.positions[i].y}));
+      const origin=state.positions[pivot],angle=(state.rng()-.5)*1.05;
+      const cosine=Math.cos(angle),sine=Math.sin(angle);
+      indices.forEach(i=>{
+        const point=state.positions[i],dx=point.x-origin.x,dy=point.y-origin.y;
+        point.x=origin.x+dx*cosine-dy*sine;point.y=origin.y+dx*sine+dy*cosine;
+      });
+      restore=()=>previous.forEach(p=>{state.positions[p.i].x=p.x;state.positions[p.i].y=p.y});
+    } else {
+      const index=Math.floor(state.rng()*state.positions.length);
+      const point=state.positions[index],previous={x:point.x,y:point.y};
+      point.x+=(state.rng()-.5)*2*moveSize;point.y+=(state.rng()-.5)*2*moveSize;
+      restore=()=>{point.x=previous.x;point.y=previous.y};
+    }
     const candidate=calculateEnergy();
     const delta=candidate.total-oldEnergy;
     state.attempted++;
@@ -158,7 +174,7 @@ function monteCarloStep(count=1) {
       state.energy=candidate;
       state.accepted++;
     } else {
-      point.x=previous.x; point.y=previous.y;
+      restore();
     }
     if(state.attempted%500===0) centerChain();
     if(state.attempted%40===0) sampleHistory();

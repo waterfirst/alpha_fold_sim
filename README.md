@@ -14,6 +14,7 @@ https://waterfirst.github.io/alpha_fold_sim/
 - 소수성·극성·전하·시스테인 비결합 상호작용 `E_nonbond`
 - 물·변성제·막 환경 항 `E_solvent`
 - Metropolis acceptance `P = min(1, exp(-ΔE/T))`
+- 국소 이동과 결합 길이를 보존하는 pivot move를 혼합한 구조 탐색
 - 총에너지, 회전반경 `Rg`, 비결합 접촉수, 수용률
 - 실시간 에너지 경로와 residue contact map
 
