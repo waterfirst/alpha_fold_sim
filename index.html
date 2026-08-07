@@ -1,100 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>다양한 예제가 있는 AlphaFold 시뮬레이션</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="아미노산 서열, 온도와 용매 조건을 바꾸며 에너지 경관과 단백질 접힘을 탐구하는 교육용 coarse-grained Monte Carlo 실험실">
+  <title>Protein Folding Lab | 에너지 경관과 구조 예측</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d1d31'/%3E%3Cpath d='M12 16c17-12 25 7 40 1M11 32c12-13 29 13 43-2M14 49c15 10 24-10 38-4' fill='none' stroke='%234ec6ca' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🧬 AlphaFold 단백질 접힘 시뮬레이션</h1>
-        
-        <p style="text-align:center">
-            이 시뮬레이션은 단백질이 어떻게 접히는지, AlphaFold가 어떻게 그 구조를 예측하는지 보여줍니다.<br>
-            다양한 예제를 선택하고 AI가 구조를 찾아내는 과정을 확인해보세요!
-        </p>
-        
-        <div class="controls">
-            <button id="start-btn">AlphaFold 실행하기</button>
-            <button id="reset-btn">초기화</button>
-        </div>
-        
-        <div class="example-name" id="example-name">기본 단백질 구조</div>
-        <div class="game-area" id="protein-container"></div>
-        <div class="tooltip" id="tooltip"></div>
-        
-        <div class="score" id="score-display">점수: 0</div>
-        
-        <div class="button-group">
-            <div class="button-group-title">단백질 예제 선택</div>
-            <div class="controls">
-                <button id="example-basic">기본 구조</button>
-                <button id="example-helix">알파 헬릭스</button>
-                <button id="example-sheet">베타 시트</button>
-                <button id="example-globular">글로불러 단백질</button>
-                <button id="example-enzyme">효소 구조</button>
-                <button id="example-membrane">막 단백질</button>
-            </div>
-        </div>
-        
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #e74c3c;"></div>
-                <span>소수성 (H)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #3498db;"></div>
-                <span>친수성 (P)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #9b59b6;"></div>
-                <span>특수 기능 (S)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #f1c40f;"></div>
-                <span>시스테인 (C)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #2ecc71;"></div>
-                <span>글리신 (G)</span>
-            </div>
-        </div>
-        
-        <div class="tabs">
-            <div class="tab active" data-tab="info">단백질 정보</div>
-            <div class="tab" data-tab="alphafold">AlphaFold 설명</div>
-        </div>
-        
-        <div class="tab-content" id="info-tab">
-            <div class="info-box">
-                <h3>단백질 접힘의 원리</h3>
-                <ul>
-                    <li><strong style="color:#e74c3c">소수성(H)</strong> 아미노산은 물을 싫어해 단백질 내부로 숨으려 합니다.</li>
-                    <li><strong style="color:#3498db">친수성(P)</strong> 아미노산은 물을 좋아해 바깥쪽으로 나오려 합니다.</li>
-                    <li><strong style="color:#9b59b6">특수 기능(S)</strong> 아미노산은 효소 활성, 기질 결합 등 특별한 역할을 합니다.</li>
-                    <li><strong style="color:#f1c40f">시스테인(C)</strong>은 황 결합을 형성해 단백질 구조를 안정화합니다.</li>
-                    <li><strong style="color:#2ecc71">글리신(G)</strong>은 작고 유연해 단백질의 구부러짐에 중요합니다.</li>
-                </ul>
-                <p>단백질은 위와 같은 아미노산들의 특성에 따라 특정 3D 구조로 자발적으로 접힙니다.</p>
-            </div>
-        </div>
-        
-        <div class="tab-content" id="alphafold-tab" style="display:none">
-            <div class="info-box">
-                <h3>AlphaFold의 작동 원리</h3>
-                <p>AlphaFold는 Google DeepMind가 개발한 AI 시스템으로 단백질 구조를 예측합니다.</p>
-                <ol>
-                    <li><strong>다중 서열 정렬(MSA)</strong>: 진화적으로 관련된 단백질 서열들을 비교합니다.</li>
-                    <li><strong>특성 추출</strong>: 아미노산 간의 관계와 물리화학적 특성을 분석합니다.</li>
-                    <li><strong>딥러닝 모델</strong>: 복잡한 신경망을 통해 아미노산 간의 3D 거리를 예측합니다.</li>
-                    <li><strong>구조 정제</strong>: 물리 기반 알고리즘으로 최종 구조를 최적화합니다.</li>
-                </ol>
-                <p>실제 AlphaFold는 50개 이상의 딥러닝 모델과 방대한 계산 자원을 사용해 높은 정확도를 달성합니다.</p>
-            </div>
-        </div>
-    </div>
+  <a class="skip-link" href="#lab">실험실로 바로가기</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Protein Folding Lab 홈">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 9c10-8 15 3 22 1M7 20c7-8 17 8 26-1M9 31c9 6 14-6 22-2"/><circle cx="8" cy="9" r="2.7"/><circle cx="33" cy="19" r="2.7"/><circle cx="9" cy="31" r="2.7"/></svg>
+      <span>Protein Folding Lab</span>
+    </a>
+    <span class="model-badge">Coarse-grained Monte Carlo</span>
+  </header>
 
-    <script src="script.js"></script>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <h1 id="page-title">서열에서 구조로,<br>에너지 경관을 탐색합니다.</h1>
+      </div>
+      <div class="intro-copy">
+        <p>아미노산 서열과 환경 조건이 바뀌면 접힘 경로와 최종 구조는 어떻게 달라질까요? 축약된 사슬 모델을 직접 움직여 보며 자유에너지 최소화, 소수성 붕괴와 열적 요동을 관찰합니다.</p>
+        <p class="scope-note"><strong>모델의 범위</strong> 실제 AlphaFold 추론이나 원자 수준 분자동역학이 아닙니다. 통계물리의 핵심 원리를 학습하기 위한 2차원 교육 모델입니다.</p>
+      </div>
+    </section>
+
+    <section class="lab" id="lab" aria-label="단백질 접힘 실험실">
+      <aside class="control-panel">
+        <div class="panel-heading">
+          <h2>실험 조건</h2>
+          <span id="run-state" class="state" data-state="ready">준비</span>
+        </div>
+
+        <label class="field">
+          <span>서열 프리셋</span>
+          <select id="preset">
+            <option value="core">소수성 코어 형성</option>
+            <option value="helix">양친매성 반복 서열</option>
+            <option value="disulfide">시스테인 풍부 서열</option>
+            <option value="charged">전하 경쟁 서열</option>
+            <option value="mixed">혼합 40-mer</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>아미노산 서열 <small>1-letter code · 8–48 aa</small></span>
+          <textarea id="sequence" rows="3" spellcheck="false" maxlength="64" aria-describedby="sequence-help"></textarea>
+          <small id="sequence-help">ACDEFGHIKLMNPQRSTVWY만 사용합니다.</small>
+        </label>
+        <button class="button secondary full" id="apply-sequence" type="button">서열 적용</button>
+
+        <div class="control-divider"></div>
+
+        <label class="field range-field">
+          <span><span>온도 T</span><output id="temperature-value" for="temperature">0.85</output></span>
+          <input id="temperature" type="range" min="0.20" max="2.50" step="0.05" value="0.85">
+          <small>낮으면 최소점에 갇히고, 높으면 구조가 풀립니다.</small>
+        </label>
+
+        <label class="field">
+          <span>용매 환경</span>
+          <select id="solvent">
+            <option value="water">물 · 소수성 붕괴 강화</option>
+            <option value="denaturant">변성제 · 상호작용 약화</option>
+            <option value="membrane">막 · 소수성 밴드 선호</option>
+          </select>
+        </label>
+
+        <label class="field range-field">
+          <span><span>계산 속도</span><output id="speed-value" for="speed">120</output></span>
+          <input id="speed" type="range" min="20" max="400" step="20" value="120">
+          <small>화면 한 프레임당 Monte Carlo 시도 횟수입니다.</small>
+        </label>
+
+        <div class="actions">
+          <button class="button primary" id="run" type="button">실험 시작</button>
+          <button class="button secondary" id="step" type="button">100회 진행</button>
+          <button class="button quiet" id="reset" type="button">초기화</button>
+          <button class="button quiet" id="randomize" type="button">새 초기구조</button>
+        </div>
+        <p class="error" id="sequence-error" role="alert" aria-live="polite"></p>
+      </aside>
+
+      <div class="workspace">
+        <div class="structure-head">
+          <div>
+            <h2>구조 궤적</h2>
+            <p id="experiment-caption">소수성 잔기가 내부로 모이는 과정을 관찰하세요.</p>
+          </div>
+          <div class="legend" aria-label="잔기 유형 범례">
+            <span><i data-type="hydrophobic"></i>소수성</span>
+            <span><i data-type="polar"></i>극성</span>
+            <span><i data-type="positive"></i>양전하</span>
+            <span><i data-type="negative"></i>음전하</span>
+            <span><i data-type="special"></i>G/P/C</span>
+          </div>
+        </div>
+        <div class="structure-stage">
+          <canvas id="protein-canvas" aria-label="현재 단백질 사슬의 2차원 축약 구조" role="img"></canvas>
+          <div id="residue-tooltip" class="tooltip" hidden></div>
+        </div>
+
+        <dl class="metrics" aria-label="실시간 계산 지표">
+          <div><dt>총에너지</dt><dd id="metric-energy">—</dd><small>reduced unit</small></div>
+          <div><dt>회전반경 Rg</dt><dd id="metric-rg">—</dd><small>compactness</small></div>
+          <div><dt>비결합 접촉</dt><dd id="metric-contacts">—</dd><small>r &lt; 1.65σ</small></div>
+          <div><dt>수용률</dt><dd id="metric-acceptance">—</dd><small>Metropolis</small></div>
+          <div><dt>MC 시도</dt><dd id="metric-steps">0</dd><small>proposals</small></div>
+        </dl>
+
+        <div class="analysis-grid">
+          <figure>
+            <figcaption><strong>에너지 경로</strong><span>낮아지는 경향과 열적 요동을 함께 봅니다.</span></figcaption>
+            <canvas id="energy-canvas" aria-label="Monte Carlo 시도에 따른 총에너지 그래프" role="img"></canvas>
+          </figure>
+          <figure>
+            <figcaption><strong>접촉 지도</strong><span>멀리 떨어진 서열 잔기가 공간에서 만나는지 봅니다.</span></figcaption>
+            <canvas id="contact-canvas" aria-label="잔기 간 접촉 지도" role="img"></canvas>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading" aria-labelledby="reading-title">
+      <div class="reading-title">
+        <h2 id="reading-title">무엇을 계산하고,<br>무엇을 계산하지 않는가</h2>
+        <nav class="tabs" aria-label="학습 내용">
+          <button class="tab active" type="button" data-tab="physics" aria-selected="true">에너지 모델</button>
+          <button class="tab" type="button" data-tab="alphafold" aria-selected="false">AlphaFold와 차이</button>
+          <button class="tab" type="button" data-tab="experiments" aria-selected="false">추천 실험</button>
+        </nav>
+      </div>
+      <div class="reading-body">
+        <article class="tab-panel active" id="physics-panel">
+          <h3>한 번의 이동은 Boltzmann 확률로 결정됩니다.</h3>
+          <p>잔기 하나를 무작위로 이동한 뒤 에너지 변화 ΔE를 계산합니다. 에너지가 낮아지면 이동을 받아들이고, 높아지더라도 <span class="equation">P = exp(−ΔE/T)</span>의 확률로 수용합니다. 이 규칙이 국소 최소점 탈출과 열적 요동을 만듭니다.</p>
+          <div class="formula-list">
+            <div><strong>E<sub>bond</sub></strong><span>연속 잔기의 결합 길이를 유지하는 조화 퍼텐셜</span></div>
+            <div><strong>E<sub>bend</sub></strong><span>사슬의 급격한 굽힘에 드는 에너지</span></div>
+            <div><strong>E<sub>nonbond</sub></strong><span>소수성·극성·전하·시스테인 접촉의 축약 상호작용</span></div>
+            <div><strong>E<sub>solvent</sub></strong><span>물·변성제·막 환경이 잔기 배치에 주는 선택 압력</span></div>
+          </div>
+        </article>
+        <article class="tab-panel" id="alphafold-panel" hidden>
+          <h3>이 도구는 AlphaFold의 축소판이 아닙니다.</h3>
+          <p>AlphaFold는 방대한 구조·서열 데이터에서 학습한 신경망으로 잔기 사이의 기하와 구조를 추론합니다. pLDDT는 잔기별 예측 신뢰도이고 PAE는 두 잔기의 상대 위치 오차 기대값입니다. 반면 이 실험실은 학습 데이터 없이 단순한 에너지 함수와 확률적 탐색만 사용합니다.</p>
+          <div class="comparison">
+            <div><strong>이 실험실</strong><span>왜 접힘 경로가 확률적이고 환경에 민감한지 설명</span></div>
+            <div><strong>AlphaFold</strong><span>서열에서 실제에 가까운 3차원 구조를 예측하고 신뢰도를 제시</span></div>
+          </div>
+        </article>
+        <article class="tab-panel" id="experiments-panel" hidden>
+          <h3>같은 서열도 조건과 초기상태에 따라 다른 경로를 택합니다.</h3>
+          <ol class="experiment-list">
+            <li><strong>온도 스윕</strong><span>T=0.3, 0.85, 2.0에서 같은 서열의 Rg와 수용률을 비교합니다.</span></li>
+            <li><strong>변성 실험</strong><span>물에서 접은 뒤 변성제로 바꾸고 에너지와 접촉수 변화를 관찰합니다.</span></li>
+            <li><strong>재현성 실험</strong><span>‘새 초기구조’를 반복해 서로 다른 경로가 비슷한 저에너지 구조로 모이는지 봅니다.</span></li>
+            <li><strong>서열 효과</strong><span>소수성 코어와 전하 경쟁 프리셋의 contact map을 비교합니다.</span></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ScholarBridge Simulation Lab</p>
+    <p>교육용 coarse-grained model · 실제 구조 예측 및 연구용 분석에는 사용하지 마세요.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
